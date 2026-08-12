@@ -1,10 +1,10 @@
 # Mia's Bakery — Website Project
 
 ## Student Information
-- **Name:** [Your Full Name]
-- **Student Number:** [Your Student Number]
-- **Group:** [Your Group, if applicable]
-- **Subject:** [Subject Name and Code]
+- **Name:** [Sisanda Martins]
+- **Student Number:** [ST10376718]
+- **Group:** [NO GROUP]
+- **Subject:** [Web Development WEDE5020]
 
 ## Project Overview
 This repository contains the Portfolio of Evidence (PoE) for the Mia's Bakery website project. Mia's Bakery is a neighbourhood bakery based in Cape Town, South Africa, specialising in freshly baked bread, pastries, and custom celebration cakes. This project takes the website from initial planning (Part 1) through visual design (Part 2) to full functionality and SEO optimisation (Part 3).
@@ -52,19 +52,19 @@ Home
 ## Changelog
 | Date | Change |
 |---|---|
-| [Date] | Initial repository setup and folder structure created |
-| [Date] | Created HTML files for all five pages (index, about, products, enquiry, contact) |
-| [Date] | Added placeholder content pending final research |
+| [04/08/26] | Initial repository setup and folder structure created |
+| [04/08/26] | Created HTML files for all five pages (index, about, products, enquiry, contact) |
+| [12/08/26] | Added placeholder content pending final research |
 
 ## References
 *(Compile all references used across the Website Project Proposal and Part 1 research here, in Harvard style — IIE adapted)*
 
-- Bynamnamnam, n.d. *Bakery pastries display photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/29445730 [Accessed: [date]].
-- Eat Kubba, n.d. *Sliced sourdough bread photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/11842163 [Accessed: [date]].
-- Fatih Guney, n.d. *Bakery display case photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/17869890 [Accessed: [date]].
-- Oleksandr Plakhota, n.d. *Baker kneading dough photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/30232344 [Accessed: [date]].
-- Font Awesome, n.d. *Icons for websites*. Available at: https://fontawesome.com [Accessed: [date]].
-- Google Fonts, n.d. *Web fonts*. Available at: https://fonts.google.com [Accessed: [date]].
-- Patricio Ledeill, n.d. *Celebration cake photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/19036040 [Accessed: [date]].
-- Pixabay, n.d. *Free images and graphics*. Available at: https://pixabay.com [Accessed: [date]].
-- W3Schools, n.d. *HTML, CSS and JavaScript tutorials*. Available at: https://www.w3schools.com [Accessed: [date]].
+- Bynamnamnam, n.d. *Bakery pastries display photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/29445730 [Accessed: [04/08/26]].
+- Eat Kubba, n.d. *Sliced sourdough bread photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/11842163 [Accessed: [04/08/26]].
+- Fatih Guney, n.d. *Bakery display case photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/17869890 [Accessed: [04/08/26]].
+- Oleksandr Plakhota, n.d. *Baker kneading dough photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/30232344 [Accessed: [04/08/26]].
+- Font Awesome, n.d. *Icons for websites*. Available at: https://fontawesome.com [Accessed: [04/08/26]].
+- Google Fonts, n.d. *Web fonts*. Available at: https://fonts.google.com [Accessed: [04/08/26]].
+- Patricio Ledeill, n.d. *Celebration cake photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/19036040 [Accessed: [04/08/26]].
+- Pixabay, n.d. *Free images and graphics*. Available at: https://pixabay.com [Accessed: [04/08/26]].
+- W3Schools, n.d. *HTML, CSS and JavaScript tutorials*. Available at: https://www.w3schools.com [Accessed: [05/08/26]].
