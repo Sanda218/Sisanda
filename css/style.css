@@ -1,0 +1,9 @@
+/* Styling for Mia's Bakery website — to be developed in Part 2 */
+
+/* Basic image sizing so photos don't overflow the page before full Part 2 styling is applied */
+img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  display: block;
+}

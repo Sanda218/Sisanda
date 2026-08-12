@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mia's Bakery | Enquiry</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Mia's Bakery</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <h2>Order a Custom Cake or Ask a Question</h2>
+    <p>Fill out the form below to enquire about a custom cake order or ask about our products. Client-side validation and submission handling will be added with JavaScript in Part 3.</p>
+
+    <!-- Basic enquiry form structure; functionality added in Part 3 -->
+    <form action="#" method="post">
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone">
+
+      <label for="product">Product Interested In</label>
+      <select id="product" name="product">
+        <option value="bread">Fresh Bread</option>
+        <option value="pastries">Pastries</option>
+        <option value="cake">Celebration Cake</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Enquiry</button>
+
+    </form>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mia's Bakery. All rights reserved.</p>
+    <p>Cape Town, South Africa</p>
+  </footer>
+
+</body>
+</html>
