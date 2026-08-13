@@ -63,8 +63,4 @@ Home
 - Eat Kubba, n.d. *Sliced sourdough bread photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/11842163 [Accessed: [04/08/26]].
 - Fatih Guney, n.d. *Bakery display case photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/17869890 [Accessed: [04/08/26]].
 - Oleksandr Plakhota, n.d. *Baker kneading dough photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/30232344 [Accessed: [04/08/26]].
-- Font Awesome, n.d. *Icons for websites*. Available at: https://fontawesome.com [Accessed: [04/08/26]].
-- Google Fonts, n.d. *Web fonts*. Available at: https://fonts.google.com [Accessed: [04/08/26]].
 - Patricio Ledeill, n.d. *Celebration cake photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/19036040 [Accessed: [04/08/26]].
-- Pixabay, n.d. *Free images and graphics*. Available at: https://pixabay.com [Accessed: [04/08/26]].
-- W3Schools, n.d. *HTML, CSS and JavaScript tutorials*. Available at: https://www.w3schools.com [Accessed: [05/08/26]].
