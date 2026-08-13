@@ -41,13 +41,18 @@ Part 1 covers project initiation and planning: choosing the target organisation,
 *Part 2 and Part 3 details will follow in future submissions/edits.*
 
 ## Sitemap
-```
+![Mia's Bakery sitemap](docs/sitemap.png)
+
+Shared across all five pages:
 Home
 ├── About Us
 ├── Products
 ├── Enquiry
 └── Contact Us
-```
+
+## Wireframe
+![Mia's Bakery sitemap](docs/wireframe.png)
+
 
 ## Changelog
 | Date | Change |
