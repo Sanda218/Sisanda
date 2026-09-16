@@ -4,23 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mia's Bakery| About Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Header and navigation menu, presen on every page for consistent site-wide navigation -->
-   <head>
-    <h2>Mia's Bakery</h2>
+  <!-- Header and navigation menu, present on every page for consistent site-wide navigation -->
+   <header>
+    <h1>Mia's Bakery</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
         <li><a href="products.html">Products</a></li>
         <li><a href="enquiry.html">Enquiry</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
-   </head>
+   </header>
    <!-- Main content area for the About Us page -->
     <main>
       
@@ -41,9 +44,11 @@
   <!-- Team member -->
    <section id="team">
     <h2>Meet the Team</h2>
-    <div class="team member">
-      <img src="images/team-portrait.jpg"
-      alt="Baker kneading dough in an apron">
+    <div class="team-member">
+      <img src="images/responsive/team-portrait-900.jpg"
+        srcset="images/responsive/team-portrait-480.jpg 480w, images/responsive/team-portrait-900.jpg 900w, images/responsive/team-portrait-1600.jpg 1600w"
+        sizes="(max-width: 600px) 90vw, 300px"
+        alt="Baker kneading dough in an apron">
       <h3>Mia Jacobs</h3>
       <p>Founder &amp; Head Baker</p>
     </div>

@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mia's Bakery | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,8 +14,8 @@
   <header><h1>Mia's Bakery</h1>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-  <li><a href="about.html">About US</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+  <li><a href="about.html">About Us</a></li>
   <li><a href="products.html">Products</a></li>
   <li><a href="enquiry.html">Enquiry</a></li>
   <li><a href="contact.html">Contact Us</a></li>
@@ -23,10 +26,15 @@
  <main>
   <!-- Hero section main introduction and call to action -->
   <section id="hero">
-    <img src="images/hero.jpg" alt="Glass dispaly case of freshly baked cakes and pastries"
-    <h2>Welcome to Mia's Bakery</h2>
-    <p> Fresh bread, pastries, and custom celebration cakes baked daily in the heart of Cape Town. Taste the difference of quality ingredients and honest baking</p>
-    <a href="enquiry.html">Order a Custom Cake</a>
+    <img src="images/responsive/hero-900.jpg"
+      srcset="images/responsive/hero-480.jpg 480w, images/responsive/hero-900.jpg 900w, images/responsive/hero-1600.jpg 1600w"
+      sizes="100vw"
+      alt="Glass display case of freshly baked cakes and pastries">
+    <div class="hero-content">
+      <h2>Welcome to Mia's Bakery</h2>
+      <p>Fresh bread, pastries, and custom celebration cakes baked daily in the heart of Cape Town. Taste the difference of quality ingredients and honest baking.</p>
+      <a href="enquiry.html" class="btn">Order a Custom Cake</a>
+    </div>
   </section>
   <!-- Brief introduction to the bakery -->
    <section id="intro">
@@ -42,7 +50,7 @@
         <li>Pastries</li>
         <li>Celebration Cakes</li>
       </ul>
-      <a href="products.html">View All Products</a>
+      <a href="products.html" class="btn btn-secondary">View All Products</a>
     </section>
  </main>
  <!-- Footer with contct deatils, present on every page -->

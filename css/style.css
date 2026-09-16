@@ -1,9 +1,587 @@
-/* Styling for Mia's Bakery website — to be developed in Part 2 */
+/* =========================================================
+   MIA'S BAKERY — STYLESHEET
+   Part 2: CSS Styling and Responsive Design
+   Author: Sisanda Martins (ST10376718)
+   =========================================================
+   Contents:
+   1. CSS Reset
+   2. Design Tokens (custom properties)
+   3. Base Styles & Typography
+   4. Header & Navigation
+   5. Buttons
+   6. Hero Section (Home page)
+   7. Generic Content Sections
+   8. Products Page (grid layout)
+   9. About Page (history / mission-vision / team)
+   10. Contact Page (locations / map / form)
+   11. Forms (shared: Contact + Enquiry)
+   12. Footer
+   13. Responsive Design — Tablet & Mobile breakpoints
+   ========================================================= */
 
-/* Basic image sizing so photos don't overflow the page before full Part 2 styling is applied */
+
+/* ---------------------------------------------------------
+   1. CSS RESET
+   A minimal reset so the site looks consistent across
+   different browsers, which each ship different default
+   margins/paddings on elements like headings, lists and forms.
+--------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* padding/border no longer add to element width — makes layout maths predictable */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 img {
-  max-width: 500px;
-  width: 100%;
+  max-width: 100%;
   height: auto;
+  display: block; /* removes the small gap browsers add under inline images */
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit; /* form elements don't inherit font by default in most browsers */
+}
+
+
+/* ---------------------------------------------------------
+   2. DESIGN TOKENS
+   Central place for the colour palette, type scale and
+   spacing scale. Changing a value here cascades through the
+   whole site — this is "the cascade" doing the heavy lifting
+   so we don't need to repeat values in dozens of selectors.
+--------------------------------------------------------- */
+:root {
+  /* Colour palette — warm bakery tones inspired by crust, dough and kraft packaging */
+  --colour-crust:      #3B2A21; /* dark roasted-crust brown — header/footer, headings */
+  --colour-crust-soft: #5C4433; /* lighter brown for secondary text on dark backgrounds */
+  --colour-cherry:     #7A2E27; /* deep cherry-compote red — primary accent, buttons, links */
+  --colour-cherry-dark:#5E211C; /* hover state for the cherry accent */
+  --colour-gold:       #C08A2E; /* toasted-crust gold — secondary accent, prices, highlights */
+  --colour-cream:      #FBF6EC; /* warm paper background */
+  --colour-cream-alt:  #F1E8D8; /* slightly deeper cream for alternating sections/cards */
+  --colour-white:      #FFFFFF;
+  --colour-border:     #E2D5BE;
+
+  /* Typography */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Type scale (rem-based so it responds to the user's browser font-size settings) */
+  --fs-sm:   0.9375rem;  /* 15px  — small print, labels */
+  --fs-base: 1.0625rem;  /* 17px  — body text */
+  --fs-md:   1.375rem;   /* 22px  — card titles */
+  --fs-lg:   1.875rem;   /* 30px  — section headings */
+  --fs-xl:   2.75rem;    /* 44px  — page/hero heading */
+  --fs-xxl:  3.5rem;     /* 56px  — hero heading on large screens */
+
+  /* Spacing scale (used for margin/padding/gap throughout) */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+
+  /* Shared layout values */
+  --max-width: 1100px;
+  --radius: 6px;
+  --shadow: 0 4px 14px rgba(59, 42, 33, 0.12);
+}
+
+
+/* ---------------------------------------------------------
+   3. BASE STYLES & TYPOGRAPHY
+   Set once on body/headings and inherited everywhere else —
+   this is the cascade in action: one rule, site-wide effect.
+--------------------------------------------------------- */
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: 1.65;
+  color: var(--colour-crust);
+  background-color: var(--colour-cream);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--colour-crust);
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-3);
+}
+
+h3 {
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-1);
+}
+
+p {
+  margin-bottom: var(--space-2);
+  max-width: 65ch; /* keeps paragraphs a comfortable reading width */
+}
+
+main {
   display: block;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-3);
+}
+
+
+/* ---------------------------------------------------------
+   4. HEADER & NAVIGATION
+   Flexbox lays the logo and nav side by side and handles
+   vertical centring without any manual positioning.
+--------------------------------------------------------- */
+header {
+  background-color: var(--colour-crust);
+  color: var(--colour-cream);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: var(--shadow);
+}
+
+header,
+header nav ul {
+  display: flex;
+}
+
+header {
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: var(--space-2) var(--space-3);
+  gap: var(--space-2);
+}
+
+header h1 {
+  font-size: var(--fs-md);
+  color: var(--colour-cream);
+  letter-spacing: 0.02em;
+}
+
+header nav ul {
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+header nav a {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  padding: var(--space-1) 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  border-bottom-color: var(--colour-gold);
+  color: var(--colour-gold);
+}
+
+/* Highlights whichever page the visitor is currently on */
+header nav a.active {
+  border-bottom-color: var(--colour-gold);
+  color: var(--colour-gold);
+}
+
+
+/* ---------------------------------------------------------
+   5. BUTTONS
+   Shared button styling with clear interactive states, as
+   required by the brief (:hover, :focus, :active).
+--------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  background-color: var(--colour-cherry);
+  color: var(--colour-white);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  padding: 0.85em 1.8em;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: var(--colour-cherry-dark);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--colour-cherry);
+  border: 2px solid var(--colour-cherry);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background-color: var(--colour-cherry);
+  color: var(--colour-white);
+}
+
+
+/* ---------------------------------------------------------
+   6. HERO SECTION (Home page)
+   CSS Grid stacks the image and the text card in the same
+   grid cell so the caption card overlaps the photograph —
+   the site's one distinctive signature element, styled like
+   a paper price-ticket pinned onto the display case photo.
+--------------------------------------------------------- */
+#hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  min-height: 60vh;
+}
+
+#hero img,
+#hero .hero-content {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#hero .hero-content {
+  align-self: end;
+  justify-self: start;
+  background-color: var(--colour-cream);
+  border-top: 4px solid var(--colour-gold);
+  box-shadow: var(--shadow);
+  max-width: 480px;
+  margin: 0 var(--space-3) var(--space-3);
+  padding: var(--space-3);
+}
+
+#hero .hero-content h2 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-2);
+}
+
+
+/* ---------------------------------------------------------
+   7. GENERIC CONTENT SECTIONS
+   Applies to #intro and #highlights on the home page, plus
+   #history, #mission-vision on the About page — one set of
+   selectors styling several sections (cascade again).
+--------------------------------------------------------- */
+#intro,
+#highlights,
+#history,
+#mission-vision {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--colour-border);
+}
+
+#highlights ul {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+#highlights li {
+  background-color: var(--colour-cream-alt);
+  border: 1px solid var(--colour-border);
+  border-radius: var(--radius);
+  padding: var(--space-1) var(--space-3);
+  font-weight: 500;
+}
+
+
+/* ---------------------------------------------------------
+   8. PRODUCTS PAGE — CSS GRID LAYOUT
+--------------------------------------------------------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.product {
+  background-color: var(--colour-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(59, 42, 33, 0.18);
+}
+
+.product img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.product h3,
+.product p {
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+}
+
+.product h3 {
+  margin-top: var(--space-2);
+}
+
+.price {
+  display: inline-block;
+  align-self: flex-start;
+  margin: var(--space-1) var(--space-2) var(--space-2);
+  background-color: var(--colour-gold);
+  color: var(--colour-crust);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  padding: 0.3em 0.9em;
+  border-radius: 999px; /* pill-shaped price tag */
+}
+
+
+/* ---------------------------------------------------------
+   9. ABOUT PAGE — TEAM MEMBER CARD
+--------------------------------------------------------- */
+#team {
+  padding: var(--space-4) 0;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background-color: var(--colour-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-3);
+  max-width: 500px;
+}
+
+.team-member img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+
+/* ---------------------------------------------------------
+   10. CONTACT PAGE — LOCATIONS & MAP
+--------------------------------------------------------- */
+#locations {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+.location {
+  background-color: var(--colour-white);
+  border-left: 4px solid var(--colour-gold);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-3);
+  flex: 1 1 280px;
+}
+
+#map {
+  background-color: var(--colour-cream-alt);
+  border: 1px dashed var(--colour-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+
+
+/* ---------------------------------------------------------
+   11. FORMS (shared by Contact + Enquiry pages)
+--------------------------------------------------------- */
+.site-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-width: 500px;
+  background-color: var(--colour-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-3);
+}
+
+.site-form label {
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  margin-top: var(--space-1);
+}
+
+.site-form input,
+.site-form select,
+.site-form textarea {
+  width: 100%;
+  padding: 0.7em;
+  border: 1px solid var(--colour-border);
+  border-radius: var(--radius);
+  background-color: var(--colour-cream);
+  color: var(--colour-crust);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.site-form input:focus,
+.site-form select:focus,
+.site-form textarea:focus {
+  outline: none;
+  border-color: var(--colour-cherry);
+  box-shadow: 0 0 0 3px rgba(122, 46, 39, 0.15);
+}
+
+.site-form button {
+  margin-top: var(--space-2);
+  align-self: flex-start;
+  background-color: var(--colour-cherry);
+  color: var(--colour-white);
+  font-weight: 600;
+  padding: 0.85em 1.8em;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.site-form button:hover,
+.site-form button:focus-visible {
+  background-color: var(--colour-cherry-dark);
+}
+
+.site-form button:active {
+  transform: translateY(1px);
+}
+
+
+/* ---------------------------------------------------------
+   12. FOOTER
+--------------------------------------------------------- */
+footer {
+  background-color: var(--colour-crust);
+  color: var(--colour-cream-alt);
+  text-align: center;
+  padding: var(--space-3);
+  font-size: var(--fs-sm);
+}
+
+footer p {
+  max-width: none;
+  margin-bottom: 0.25rem;
+}
+
+
+/* ===========================================================
+   13. RESPONSIVE DESIGN
+   Desktop styles above are the default. These media queries
+   adapt the layout down for tablet and mobile breakpoints,
+   switching multi-column layouts to single-column, and
+   reducing font sizes and spacing for smaller viewports.
+   =========================================================== */
+
+/* ---- Tablet: 900px and below ---- */
+@media (max-width: 900px) {
+  :root {
+    --fs-xl: 2.25rem;
+    --fs-lg: 1.6rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 3 columns -> 2 on tablet */
+  }
+
+  #hero {
+    min-height: 50vh;
+  }
+
+  #hero .hero-content {
+    max-width: 90%;
+  }
+}
+
+/* ---- Mobile: 600px and below ---- */
+@media (max-width: 600px) {
+  :root {
+    --fs-xl: 1.85rem;
+    --fs-lg: 1.4rem;
+    --fs-md: 1.2rem;
+  }
+
+  main {
+    padding: var(--space-4) var(--space-2);
+  }
+
+  /* Header stacks the logo above the nav instead of sitting side by side */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav ul {
+    gap: var(--space-2);
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr; /* single column on mobile */
+  }
+
+  #locations {
+    flex-direction: column;
+  }
+
+  .team-member {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #hero .hero-content {
+    margin: 0 var(--space-2) var(--space-2);
+    padding: var(--space-2);
+  }
+
+  #hero .hero-content h2 {
+    font-size: var(--fs-xl);
+  }
 }

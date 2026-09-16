@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mia's Bakery | Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,7 +18,7 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="products.html">Products</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
         <li><a href="enquiry.html">Enquiry</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
@@ -23,30 +26,41 @@
    </header>
    <!-- Main content area for the Product page-->
     <main>
-      <h2>Our Product</h2>
+      <h2>Our Products</h2>
       <p>Detailed information about the breads, pastries, and cakes offered by Mia's Bakery.</p>
 
-      <!-- Indiviual product listings -->
-       <section class="product">
-        <img src="images/product-bread.jpg" alt="Sliced sourdough bread loaves on a wooden board"
-        <h3>Fresh Bread</h3>
-        <p>Sourdough, white, and whole wheat loaves baked fresh every morning</p>
-        <p> class="price">From R35</p>
-       </section>
+      <!-- Individual product listings -->
+      <div class="product-grid">
+        <section class="product">
+          <img src="images/responsive/product-bread-900.jpg"
+            srcset="images/responsive/product-bread-480.jpg 480w, images/responsive/product-bread-900.jpg 900w, images/responsive/product-bread-1600.jpg 1600w"
+            sizes="(max-width: 600px) 90vw, (max-width: 900px) 45vw, 30vw"
+            alt="Sliced sourdough bread loaves on a wooden board">
+          <h3>Fresh Bread</h3>
+          <p>Sourdough, white, and whole wheat loaves baked fresh every morning.</p>
+          <p class="price">From R35</p>
+        </section>
 
-       <section class="product">
-        <img src="images/product-pastries.jpg" alt="Assortment of croissants, muffins, and donuts"
-        <h3>Pastries</h3>
-        <p>Croissants, muffins, and danshies made freshly daily.</p>
-        <p> class="price">From R28</p>
-       </section>
+        <section class="product">
+          <img src="images/responsive/product-pastries-900.jpg"
+            srcset="images/responsive/product-pastries-480.jpg 480w, images/responsive/product-pastries-900.jpg 900w, images/responsive/product-pastries-1600.jpg 1600w"
+            sizes="(max-width: 600px) 90vw, (max-width: 900px) 45vw, 30vw"
+            alt="Assortment of croissants, muffins, and donuts">
+          <h3>Pastries</h3>
+          <p>Croissants, muffins, and danishes made freshly daily.</p>
+          <p class="price">From R28</p>
+        </section>
 
-       <section class="product">
-       <img src="images/product-cakes.jpg" alt="Decorated celebration cake with cream and cherries">
-       <h3>Celebration Cakes</h3>
-       <p>Custom-designed cakes for birthdays, weddings, and special occasions</p>
-       <p> class="price">From R450</p>
-       </section>
+        <section class="product">
+          <img src="images/responsive/product-cakes-900.jpg"
+            srcset="images/responsive/product-cakes-480.jpg 480w, images/responsive/product-cakes-900.jpg 900w, images/responsive/product-cakes-1600.jpg 1600w"
+            sizes="(max-width: 600px) 90vw, (max-width: 900px) 45vw, 30vw"
+            alt="Decorated celebration cake with cream and cherries">
+          <h3>Celebration Cakes</h3>
+          <p>Custom-designed cakes for birthdays, weddings, and special occasions.</p>
+          <p class="price">From R450</p>
+        </section>
+      </div>
 
     </main>
     <!-- Footer with contact details, present on every page -->
