@@ -77,7 +77,7 @@ Home
 └── Contact Us
 
 ## Wireframe
-![Mia's Bakery sitemap](docs/Mia's bakery wireframe.png)
+![Mia's Bakery wireframe](docs/Mia's bakery wireframe.png)
 
 ## Responsive Design Testing
 Screenshots were captured using Chrome DevTools' device toolbar at three widths: Desktop (1440px), Tablet (768px), and Mobile (375px).
@@ -119,6 +119,7 @@ Screenshots were captured using Chrome DevTools' device toolbar at three widths:
 | [28/08/26] | Added `:hover`, `:focus-visible`, and `:active` interactive states to nav links, buttons, product cards, and form fields |
 | [28/08/26] | Generated 480px/900px/1600px responsive image versions for all photographs and added `srcset`/`sizes` attributes to reduce page weight on smaller screens |
 | [28/08/26] | Added media queries at 900px (tablet) and 600px (mobile) breakpoints; product grid and header layout adapt at each breakpoint |
+| [16/09/26] | Captured responsive design screenshots (Home, Products, Enquiry and Contact Us) at desktop (1440px), tablet (768px), and mobile (365px) widths using Chrome DevTools, and added them to the docs folder and README
 | [16/09/26] | Resolved a merge conflict between local and remote repository history.
 | [16/09/26] | Fixed duplicate '.png.png' file extensions on all responsive design screenshot files in the docs folder.
 
