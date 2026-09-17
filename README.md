@@ -119,6 +119,8 @@ Screenshots were captured using Chrome DevTools' device toolbar at three widths:
 | [28/08/26] | Added `:hover`, `:focus-visible`, and `:active` interactive states to nav links, buttons, product cards, and form fields |
 | [28/08/26] | Generated 480px/900px/1600px responsive image versions for all photographs and added `srcset`/`sizes` attributes to reduce page weight on smaller screens |
 | [28/08/26] | Added media queries at 900px (tablet) and 600px (mobile) breakpoints; product grid and header layout adapt at each breakpoint |
+| [16/09/26] | Version Control Fix:** Resolved a merge conflict between local and remote repository history.
+| [16/09/26] | File Fix:** Fixed duplicate '.png.png' file extensions on all responsive design screenshot files in the docs folder.
 
 ## References
 *(Compile all references used across the Website Project Proposal and Part 1 research here, in Harvard style — IIE adapted)*
