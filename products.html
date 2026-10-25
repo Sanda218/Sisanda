@@ -3,40 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mia's Bakery | Products</title>
+  <title>Bread, Pastries & Celebration Cakes | Mia's Bakery Cape Town</title>
+  <meta name="description" content="Browse Mia's Bakery's sourdough and fresh bread, croissants, muffins, danishes and custom celebration cakes. Search by name and filter by category.">
+  <meta name="author" content="Mia's Bakery">
+  <meta name="theme-color" content="#3B2A21">
+  <link rel="canonical" href="https://sanda218.github.io/Sisanda/products.html">
+
+  <!-- Open Graph / social sharing (off-page SEO) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mia's Bakery">
+  <meta property="og:title" content="Bread, Pastries & Celebration Cakes | Mia's Bakery Cape Town">
+  <meta property="og:description" content="Browse Mia's Bakery's sourdough and fresh bread, croissants, muffins, danishes and custom celebration cakes. Search by name and filter by category.">
+  <meta property="og:url" content="https://sanda218.github.io/Sisanda/products.html">
+  <meta property="og:image" content="https://sanda218.github.io/Sisanda/images/responsive/product-bread-1600.jpg">
+  <meta property="og:image:alt" content="Sliced sourdough bread loaves on a wooden board">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A5%90%3C/text%3E%3C/svg%3E">
+  <!-- Adds a "js" class so CSS can show JavaScript-only features (hamburger menu, accordion) without hiding content for visitors with JavaScript off -->
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <!-- Header and navigation menu, present on every page for consistent site-wide navigation -->
-   <header>
-    <h1>Mia's Bakery</h1>
-    <nav>
+  <header>
+    <a class="brand" href="index.html">Mia's Bakery</a>
+    <!-- Hamburger toggle: only visible on mobile (see CSS); script.js opens and closes the menu -->
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav id="site-nav" aria-label="Main">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="products.html" class="active" aria-current="page">Products</a></li>
         <li><a href="enquiry.html">Enquiry</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
-   </header>
-   <!-- Main content area for the Product page-->
-    <main>
-      <h2>Our Products</h2>
-      <p>Detailed information about the breads, pastries, and cakes offered by Mia's Bakery.</p>
+  </header>
 
-      <!-- Individual product listings -->
-      <div class="product-grid">
+  <!-- Main content area for the Products page -->
+  <main id="main">
+
+    <h1>Our Products</h1>
+    <p>Detailed information about the breads, pastries, and cakes offered by Mia's Bakery. Can't find what you need? <a href="enquiry.html">Send us an enquiry</a> and we'll make it for you.</p>
+
+    <!-- Search / filter / sort controls (script.js makes these work; without JavaScript the full list below is simply shown) -->
+    <form class="filters" role="search" aria-label="Search products" id="product-filters" novalidate>
+      <div class="field">
+        <label for="product-search">Search</label>
+        <input type="search" id="product-search" name="q" placeholder="e.g. croissant, sourdough, wedding" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="product-category">Category</label>
+        <select id="product-category" name="category">
+          <option value="all">All products</option>
+          <option value="bread">Fresh Bread</option>
+          <option value="pastries">Pastries</option>
+          <option value="cakes">Celebration Cakes</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="product-sort">Sort by</label>
+        <select id="product-sort" name="sort">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+          <option value="name">Name: A to Z</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-secondary btn-small" id="filter-reset">Clear filters</button>
+    </form>
+    <p id="result-count" class="result-count" aria-live="polite"></p>
+
+    <!-- Product listings: script.js rebuilds this grid from its product data. The three cards below are the no-JavaScript fallback. -->
+    <div class="product-grid" id="product-grid">
         <section class="product">
           <img src="images/responsive/product-bread-900.jpg"
             srcset="images/responsive/product-bread-480.jpg 480w, images/responsive/product-bread-900.jpg 900w, images/responsive/product-bread-1600.jpg 1600w"
             sizes="(max-width: 600px) 90vw, (max-width: 900px) 45vw, 30vw"
-            alt="Sliced sourdough bread loaves on a wooden board">
-          <h3>Fresh Bread</h3>
+            width="900" height="599" loading="lazy" decoding="async" alt="Sliced sourdough bread loaves on a wooden board">
+          <h2>Fresh Bread</h2>
           <p>Sourdough, white, and whole wheat loaves baked fresh every morning.</p>
           <p class="price">From R35</p>
         </section>
@@ -45,8 +100,8 @@
           <img src="images/responsive/product-pastries-900.jpg"
             srcset="images/responsive/product-pastries-480.jpg 480w, images/responsive/product-pastries-900.jpg 900w, images/responsive/product-pastries-1600.jpg 1600w"
             sizes="(max-width: 600px) 90vw, (max-width: 900px) 45vw, 30vw"
-            alt="Assortment of croissants, muffins, and donuts">
-          <h3>Pastries</h3>
+            width="900" height="1350" loading="lazy" decoding="async" alt="Assortment of croissants, muffins, and donuts">
+          <h2>Pastries</h2>
           <p>Croissants, muffins, and danishes made freshly daily.</p>
           <p class="price">From R28</p>
         </section>
@@ -55,18 +110,29 @@
           <img src="images/responsive/product-cakes-900.jpg"
             srcset="images/responsive/product-cakes-480.jpg 480w, images/responsive/product-cakes-900.jpg 900w, images/responsive/product-cakes-1600.jpg 1600w"
             sizes="(max-width: 600px) 90vw, (max-width: 900px) 45vw, 30vw"
-            alt="Decorated celebration cake with cream and cherries">
-          <h3>Celebration Cakes</h3>
+            width="900" height="1350" loading="lazy" decoding="async" alt="Decorated celebration cake with cream and cherries">
+          <h2>Celebration Cakes</h2>
           <p>Custom-designed cakes for birthdays, weddings, and special occasions.</p>
           <p class="price">From R450</p>
         </section>
-      </div>
+    </div>
 
-    </main>
-    <!-- Footer with contact details, present on every page -->
-     <footer>
-      <p>&copy; 2026 Mia's Bakery. All rights reserved.</p>
-      <p>Cape Town, South Africa</p>
-     </footer>
+    <p id="no-results" class="no-results" hidden>No products match your search. Try a different word or <button type="button" class="link-button" id="no-results-reset">clear the filters</button>.</p>
+
+  </main>
+
+  <!-- Footer with contact details and internal links, present on every page -->
+  <footer>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="enquiry.html">Enquiry</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <p>&copy; 2026 Mia's Bakery. All rights reserved.</p>
+    <p>Cape Town, South Africa</p>
+  </footer>
+  <script src="js/script.js" defer></script>
 </body>
 </html>

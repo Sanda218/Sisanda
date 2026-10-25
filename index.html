@@ -3,60 +3,223 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mia's Bakery | Home</title>
+  <title>Mia's Bakery | Fresh Bread, Pastries & Cakes in Cape Town</title>
+  <meta name="description" content="Neighbourhood bakery in Cape Town baking fresh bread, pastries and custom celebration cakes daily. Visit our CBD or Observatory branch or order a cake online.">
+  <meta name="author" content="Mia's Bakery">
+  <meta name="theme-color" content="#3B2A21">
+  <link rel="canonical" href="https://sanda218.github.io/Sisanda/">
+
+  <!-- Open Graph / social sharing (off-page SEO) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mia's Bakery">
+  <meta property="og:title" content="Mia's Bakery | Fresh Bread, Pastries & Cakes in Cape Town">
+  <meta property="og:description" content="Neighbourhood bakery in Cape Town baking fresh bread, pastries and custom celebration cakes daily. Visit our CBD or Observatory branch or order a cake online.">
+  <meta property="og:url" content="https://sanda218.github.io/Sisanda/">
+  <meta property="og:image" content="https://sanda218.github.io/Sisanda/images/responsive/product-bread-1600.jpg">
+  <meta property="og:image:alt" content="Sliced sourdough bread loaves on a wooden board">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A5%90%3C/text%3E%3C/svg%3E">
+  <!-- Adds a "js" class so CSS can show JavaScript-only features (hamburger menu, accordion) without hiding content for visitors with JavaScript off -->
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured data (local SEO): tells search engines about both branches and trading hours -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Bakery",
+      "@id": "https://sanda218.github.io/Sisanda/#cbd",
+      "name": "Mia's Bakery - Cape Town CBD",
+      "url": "https://sanda218.github.io/Sisanda/",
+      "image": "https://sanda218.github.io/Sisanda/images/responsive/product-bread-1600.jpg",
+      "telephone": "+27-21-424-5678",
+      "email": "info@miasbakery.co.za",
+      "priceRange": "R",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12 Long Street",
+        "addressLocality": "Cape Town",
+        "postalCode": "8001",
+        "addressCountry": "ZA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.9209,
+        "longitude": 18.4162
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "07:00",
+          "closes": "17:00"
+        }
+      ]
+    },
+    {
+      "@type": "Bakery",
+      "@id": "https://sanda218.github.io/Sisanda/#observatory",
+      "name": "Mia's Bakery - Observatory",
+      "url": "https://sanda218.github.io/Sisanda/",
+      "image": "https://sanda218.github.io/Sisanda/images/responsive/product-bread-1600.jpg",
+      "telephone": "+27-21-447-2233",
+      "email": "observatory@miasbakery.co.za",
+      "priceRange": "R",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "45 Lower Main Road",
+        "addressLocality": "Observatory",
+        "postalCode": "7925",
+        "addressCountry": "ZA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.9393,
+        "longitude": 18.4741
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "07:00",
+          "closes": "17:00"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
-  <!-- header navigation menu, present on every page for consistent site-wide navigation -->
-  <header><h1>Mia's Bakery</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-  <li><a href="about.html">About Us</a></li>
-  <li><a href="products.html">Products</a></li>
-  <li><a href="enquiry.html">Enquiry</a></li>
-  <li><a href="contact.html">Contact Us</a></li>
-</ul>
-</nav>
-</header>
-<!-- Main content area for the homepage-->
- <main>
-  <!-- Hero section main introduction and call to action -->
-  <section id="hero">
-    <img src="images/responsive/hero-900.jpg"
-      srcset="images/responsive/hero-480.jpg 480w, images/responsive/hero-900.jpg 900w, images/responsive/hero-1600.jpg 1600w"
-      sizes="100vw"
-      alt="Glass display case of freshly baked cakes and pastries">
-    <div class="hero-content">
-      <h2>Welcome to Mia's Bakery</h2>
-      <p>Fresh bread, pastries, and custom celebration cakes baked daily in the heart of Cape Town. Taste the difference of quality ingredients and honest baking.</p>
-      <a href="enquiry.html" class="btn">Order a Custom Cake</a>
-    </div>
-  </section>
-  <!-- Brief introduction to the bakery -->
-   <section id="intro">
-    <h2>Who We Are</h2>
-    <p>Mia's Bakery is a neighbourhood bakery specialising in freshly baked bread, pastries, and custom celebration cakes made from scratch daily using quality ingredients.</p>
-   </section>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-   <!-- Quick links to product -->
-    <section id="highlights">
+  <!-- Header and navigation menu, present on every page for consistent site-wide navigation -->
+  <header>
+    <a class="brand" href="index.html">Mia's Bakery</a>
+    <!-- Hamburger toggle: only visible on mobile (see CSS); script.js opens and closes the menu -->
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content area for the homepage -->
+  <main id="main">
+
+    <!-- Hero section: main introduction and call to action -->
+    <section id="hero">
+      <img src="images/responsive/hero-900.jpg"
+        srcset="images/responsive/hero-480.jpg 480w, images/responsive/hero-900.jpg 900w, images/responsive/hero-1600.jpg 1600w"
+        sizes="(min-width: 1400px) 1232px, (min-width: 1148px) 1052px, 100vw"
+        width="900" height="1350" fetchpriority="high"
+        alt="Glass display case of freshly baked cakes and pastries at Mia's Bakery in Cape Town">
+      <div class="hero-content">
+        <h1>Welcome to Mia's Bakery</h1>
+        <p>Fresh bread, pastries, and custom celebration cakes baked daily in the heart of Cape Town. Taste the difference of quality ingredients and honest baking.</p>
+        <a href="enquiry.html" class="btn">Order a Custom Cake</a>
+      </div>
+    </section>
+
+    <!-- Brief introduction to the bakery -->
+    <section id="intro" class="reveal">
+      <h2>Who We Are</h2>
+      <p>Mia's Bakery is a neighbourhood bakery specialising in freshly baked bread, pastries, and custom celebration cakes made from scratch daily using quality ingredients. <a href="about.html">Read our story</a> or <a href="contact.html">find the branch nearest you</a> in Cape Town CBD or Observatory.</p>
+    </section>
+
+    <!-- Quick links to products (each link pre-selects that category on the Products page) -->
+    <section id="highlights" class="reveal">
       <h2>What We Bake</h2>
       <ul>
-        <li>Fresh Bread</li>
-        <li>Pastries</li>
-        <li>Celebration Cakes</li>
+        <li><a href="products.html?category=bread">Fresh Bread</a></li>
+        <li><a href="products.html?category=pastries">Pastries</a></li>
+        <li><a href="products.html?category=cakes">Celebration Cakes</a></li>
       </ul>
       <a href="products.html" class="btn btn-secondary">View All Products</a>
     </section>
- </main>
- <!-- Footer with contct deatils, present on every page -->
+
+    <!-- Gallery: each thumbnail is a normal link to the large image; script.js upgrades it to a lightbox -->
+    <section id="gallery" class="reveal">
+      <h2>A Peek Inside the Bakery</h2>
+      <p>Tap a photo to see it larger.</p>
+      <ul class="gallery-grid">
+        <li>
+          <a class="gallery-item" href="images/responsive/hero-1600.jpg" data-caption="Our display case, restocked through the day" data-alt="Glass display case of freshly baked cakes and pastries">
+            <img src="images/responsive/hero-480.jpg" width="480" height="720" loading="lazy" decoding="async" alt="Glass display case of freshly baked cakes and pastries">
+          </a>
+        </li>
+        <li>
+          <a class="gallery-item" href="images/responsive/product-bread-1600.jpg" data-caption="Sourdough baked fresh every morning" data-alt="Sliced sourdough bread loaves on a wooden board">
+            <img src="images/responsive/product-bread-480.jpg" width="480" height="319" loading="lazy" decoding="async" alt="Sliced sourdough bread loaves on a wooden board">
+          </a>
+        </li>
+        <li>
+          <a class="gallery-item" href="images/responsive/product-pastries-1600.jpg" data-caption="Croissants, muffins and donuts, made daily" data-alt="Assortment of croissants, muffins, and donuts">
+            <img src="images/responsive/product-pastries-480.jpg" width="480" height="720" loading="lazy" decoding="async" alt="Assortment of croissants, muffins, and donuts">
+          </a>
+        </li>
+        <li>
+          <a class="gallery-item" href="images/responsive/product-cakes-1600.jpg" data-caption="A celebration cake with cream and cherries" data-alt="Decorated celebration cake with cream and cherries">
+            <img src="images/responsive/product-cakes-480.jpg" width="480" height="720" loading="lazy" decoding="async" alt="Decorated celebration cake with cream and cherries">
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Lightbox: a native <dialog> element, opened and filled by script.js -->
+  <dialog id="lightbox" class="lightbox" aria-label="Image viewer">
+    <button type="button" class="lb-btn lb-close" aria-label="Close image viewer">&times;</button>
+    <button type="button" class="lb-btn lb-prev" aria-label="Previous image">&#8249;</button>
+    <figure>
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="900" height="600">
+      <figcaption></figcaption>
+    </figure>
+    <button type="button" class="lb-btn lb-next" aria-label="Next image">&#8250;</button>
+  </dialog>
+
+  <!-- Footer with contact details and internal links, present on every page -->
   <footer>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="enquiry.html">Enquiry</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
     <p>&copy; 2026 Mia's Bakery. All rights reserved.</p>
     <p>Cape Town, South Africa</p>
   </footer>
+  <script src="js/script.js" defer></script>
 </body>
 </html>

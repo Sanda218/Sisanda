@@ -3,63 +3,163 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mia's Bakery</title>
+  <title>Order a Custom Cake or Enquire | Mia's Bakery Cape Town</title>
+  <meta name="description" content="Enquire about a custom celebration cake, bread or pastry order at Mia's Bakery in Cape Town and get an instant cost estimate and availability check.">
+  <meta name="author" content="Mia's Bakery">
+  <meta name="theme-color" content="#3B2A21">
+  <link rel="canonical" href="https://sanda218.github.io/Sisanda/enquiry.html">
+
+  <!-- Open Graph / social sharing (off-page SEO) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mia's Bakery">
+  <meta property="og:title" content="Order a Custom Cake or Enquire | Mia's Bakery Cape Town">
+  <meta property="og:description" content="Enquire about a custom celebration cake, bread or pastry order at Mia's Bakery in Cape Town and get an instant cost estimate and availability check.">
+  <meta property="og:url" content="https://sanda218.github.io/Sisanda/enquiry.html">
+  <meta property="og:image" content="https://sanda218.github.io/Sisanda/images/responsive/product-bread-1600.jpg">
+  <meta property="og:image:alt" content="Sliced sourdough bread loaves on a wooden board">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A5%90%3C/text%3E%3C/svg%3E">
+  <!-- Adds a "js" class so CSS can show JavaScript-only features (hamburger menu, accordion) without hiding content for visitors with JavaScript off -->
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  
-  <!-- Header and navigation menu, present on every page for consistent site-wide navigtion -->
-   <header>
-    <h1>Mia's Bakery</h1>
-    <nav>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Header and navigation menu, present on every page for consistent site-wide navigation -->
+  <header>
+    <a class="brand" href="index.html">Mia's Bakery</a>
+    <!-- Hamburger toggle: only visible on mobile (see CSS); script.js opens and closes the menu -->
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav id="site-nav" aria-label="Main">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="products.html">Products</a></li>
-        <li><a href="enquiry.html" class="active">Enquiry</a></li>
+        <li><a href="enquiry.html" class="active" aria-current="page">Enquiry</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
-   </header>
-   <!-- Main content area for Enquiry-->
-    <main>
+  </header>
 
-    <h2>Order a Custom Cake or Ask a Question</h2>
-    <p>Fill out the form below to enquire about a custom cake order or ask about our products. Client-side validation and submission handling will be added with JavaScript in Part 3.</p>
-    <!-- Basic enquiry form structure; functionality added in Part 3 -->
-    <form action="#" method="post" class="site-form">
+  <!-- Main content area for Enquiry -->
+  <main id="main">
 
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
+    <h1>Order a Custom Cake or Ask a Question</h1>
+    <p>Fill out the form below to enquire about a custom cake order or ask about our products. You'll see an estimated cost and availability straight away, and we'll confirm everything by email. You can <a href="products.html">browse our products</a> first if you like.</p>
 
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
+    <!-- Enquiry form: validated and submitted by script.js (novalidate lets our own error messages show) -->
+    <form action="#" method="post" class="site-form" id="enquiry-form" novalidate>
 
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone">
+      <div class="field">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+        <span class="field-error" id="name-error"></span>
+      </div>
 
-      <label for="product">Product Interested In</label>
-      <select id="product" name="product">
-        <option value="bread">Fresh Bread</option>
-        <option value="pastries">Pastries</option>
-        <option value="cake">Celebration Cake</option>
-        <option value="other">Other</option>
-      </select>
+      <div class="field">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+        <span class="field-error" id="email-error"></span>
+      </div>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+      <div class="field">
+        <label for="phone">Phone Number <span class="optional">(optional)</span></label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="e.g. 021 424 5678" aria-describedby="phone-error">
+        <span class="field-error" id="phone-error"></span>
+      </div>
+
+      <div class="field">
+        <label for="product">Product Interested In</label>
+        <select id="product" name="product" required aria-describedby="product-error">
+          <option value="">Choose a product...</option>
+          <option value="bread">Fresh Bread</option>
+          <option value="pastries">Pastries</option>
+          <option value="cake">Celebration Cake</option>
+          <option value="other">Other / general question</option>
+        </select>
+        <span class="field-error" id="product-error"></span>
+      </div>
+
+      <div class="field">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="100" step="1" value="1" inputmode="numeric" required aria-describedby="quantity-error">
+        <span class="field-error" id="quantity-error"></span>
+      </div>
+
+      <div class="field">
+        <label for="date">Date Needed <span class="optional">(required for cakes)</span></label>
+        <input type="date" id="date" name="date" aria-describedby="date-error date-hint">
+        <span class="field-hint" id="date-hint">We trade Monday to Saturday, 7am-5pm.</span>
+        <span class="field-error" id="date-error"></span>
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required aria-describedby="message-error message-count" placeholder="Tell us about flavours, design ideas, or any dietary needs."></textarea>
+        <span class="field-hint" id="message-count">0 / 500</span>
+        <span class="field-error" id="message-error"></span>
+      </div>
+
+      <!-- Honeypot: hidden from people, but spam bots fill it in. If it has a value the form is quietly discarded. -->
+      <div class="hp" aria-hidden="true">
+        <label for="website">Leave this field empty</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
 
       <button type="submit">Send Enquiry</button>
+      <p class="form-status" id="form-status" role="alert" hidden></p>
 
     </form>
-    </main>
-    <!-- Footer with contact details, present on every page-->
-     <footer>
-      <p>&copy; 2026 Mia's Bakery. All rights reserved.</p>
-      <p>Cape Town, South Africa</p>
-     </footer>
+
+    <!-- Response shown after a valid submission: cost estimate and availability -->
+    <section id="enquiry-response" class="response" tabindex="-1" aria-live="polite" hidden></section>
+
+    <!-- FAQ accordion -->
+    <section id="faq" class="reveal">
+      <h2>Before You Enquire</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <h3><button type="button" class="accordion-trigger" id="faq-t1" aria-expanded="false" aria-controls="faq-p1">How much notice do you need for a cake?</button></h3>
+          <div class="accordion-panel" id="faq-p1" role="region" aria-labelledby="faq-t1"><div><p>Celebration and birthday cakes need at least 3 days' notice. Wedding cakes need at least 14 days so we can plan the design properly.</p></div></div>
+        </div>
+        <div class="accordion-item">
+          <h3><button type="button" class="accordion-trigger" id="faq-t2" aria-expanded="false" aria-controls="faq-p2">Are the prices final?</button></h3>
+          <div class="accordion-panel" id="faq-p2" role="region" aria-labelledby="faq-t2"><div><p>Our prices are "from" prices. The estimate you see after sending this form is a guide; the final price depends on size, flavours and decoration, and we confirm it by email before baking.</p></div></div>
+        </div>
+        <div class="accordion-item">
+          <h3><button type="button" class="accordion-trigger" id="faq-t3" aria-expanded="false" aria-controls="faq-p3">When can I collect my order?</button></h3>
+          <div class="accordion-panel" id="faq-p3" role="region" aria-labelledby="faq-t3"><div><p>Both branches trade Monday to Saturday, 7am-5pm. We are closed on Sundays. See our <a href="contact.html">contact page</a> for addresses and phone numbers.</p></div></div>
+        </div>
+        <div class="accordion-item">
+          <h3><button type="button" class="accordion-trigger" id="faq-t4" aria-expanded="false" aria-controls="faq-p4">I just have a general question. Can I still use this form?</button></h3>
+          <div class="accordion-panel" id="faq-p4" role="region" aria-labelledby="faq-t4"><div><p>Yes. Choose "Other / general question" as the product. For feedback or anything else, you can also use the form on our <a href="contact.html">contact page</a>.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer with contact details and internal links, present on every page -->
+  <footer>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="enquiry.html">Enquiry</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <p>&copy; 2026 Mia's Bakery. All rights reserved.</p>
+    <p>Cape Town, South Africa</p>
+  </footer>
+  <script src="js/script.js" defer></script>
 </body>
 </html>

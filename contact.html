@@ -3,81 +3,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mia's Bakery | Contact Us</title>
+  <title>Contact Us & Opening Hours | Mia's Bakery Cape Town</title>
+  <meta name="description" content="Find Mia's Bakery in Cape Town CBD and Observatory: addresses, phone numbers, trading hours (Mon-Sat 7am-5pm), an interactive map and a contact form.">
+  <meta name="author" content="Mia's Bakery">
+  <meta name="theme-color" content="#3B2A21">
+  <link rel="canonical" href="https://sanda218.github.io/Sisanda/contact.html">
+
+  <!-- Open Graph / social sharing (off-page SEO) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mia's Bakery">
+  <meta property="og:title" content="Contact Us & Opening Hours | Mia's Bakery Cape Town">
+  <meta property="og:description" content="Find Mia's Bakery in Cape Town CBD and Observatory: addresses, phone numbers, trading hours (Mon-Sat 7am-5pm), an interactive map and a contact form.">
+  <meta property="og:url" content="https://sanda218.github.io/Sisanda/contact.html">
+  <meta property="og:image" content="https://sanda218.github.io/Sisanda/images/responsive/product-bread-1600.jpg">
+  <meta property="og:image:alt" content="Sliced sourdough bread loaves on a wooden board">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A5%90%3C/text%3E%3C/svg%3E">
+  <!-- Adds a "js" class so CSS can show JavaScript-only features (hamburger menu, accordion) without hiding content for visitors with JavaScript off -->
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- Header and navigation menu, present on every page for consistent site-wide navigation -->
   <header>
-    <h1>Mia's Bakery</h1>
-    <nav>
+    <a class="brand" href="index.html">Mia's Bakery</a>
+    <!-- Hamburger toggle: only visible on mobile (see CSS); script.js opens and closes the menu -->
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav id="site-nav" aria-label="Main">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="products.html">Products</a></li>
         <li><a href="enquiry.html">Enquiry</a></li>
-        <li><a href="contact.html" class="active">Contact Us</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact Us</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main id="main">
 
-    <h2>Contact Us</h2>
+    <h1>Contact Us</h1>
 
-    <!-- Contact details; assignment requires more than one location -->
-    <section id="locations">
+    <!-- Contact details for both branches. data-* attributes feed the interactive map. -->
+    <section id="locations" aria-label="Our branches">
 
-      <div class="location">
-        <h3>Cape Town CBD Branch</h3>
+      <div class="location" data-name="Cape Town CBD Branch" data-lat="-33.9209" data-lng="18.4162">
+        <h2>Cape Town CBD Branch</h2>
         <p>12 Long Street, Cape Town, 8001</p>
-        <p>Tel: 021 424 5678</p>
-        <p>Email: info@miasbakery.co.za</p>
-        <p>Trading Hours: Mon–Sat, 7am–5pm</p>
+        <p>Tel: <a href="tel:+27214245678">021 424 5678</a></p>
+        <p>Email: <a href="mailto:info@miasbakery.co.za">info@miasbakery.co.za</a></p>
+        <p>Trading Hours: Mon-Sat, 7am-5pm</p>
+        <p class="location-actions">
+          <button type="button" class="btn btn-secondary btn-small map-btn">Show on map</button>
+          <a class="btn btn-secondary btn-small" href="https://www.openstreetmap.org/?mlat=-33.9209&amp;mlon=18.4162#map=17/-33.9209/18.4162" target="_blank" rel="noopener noreferrer">Open larger map</a>
+        </p>
       </div>
 
-      <div class="location">
-        <h3>Observatory Branch</h3>
+      <div class="location" data-name="Observatory Branch" data-lat="-33.9393" data-lng="18.4741">
+        <h2>Observatory Branch</h2>
         <p>45 Lower Main Road, Observatory, 7925</p>
-        <p>Tel: 021 447 2233</p>
-        <p>Email: observatory@miasbakery.co.za</p>
-        <p>Trading Hours: Mon–Sat, 7am–5pm</p>
+        <p>Tel: <a href="tel:+27214472233">021 447 2233</a></p>
+        <p>Email: <a href="mailto:observatory@miasbakery.co.za">observatory@miasbakery.co.za</a></p>
+        <p>Trading Hours: Mon-Sat, 7am-5pm</p>
+        <p class="location-actions">
+          <button type="button" class="btn btn-secondary btn-small map-btn">Show on map</button>
+          <a class="btn btn-secondary btn-small" href="https://www.openstreetmap.org/?mlat=-33.9393&amp;mlon=18.4741#map=17/-33.9393/18.4741" target="_blank" rel="noopener noreferrer">Open larger map</a>
+        </p>
       </div>
 
     </section>
 
-    <!-- Google Map embed placeholder, to be added in Part 3 -->
-    <section id="map">
-      <h3>Find Us</h3>
-      <p>[Google Maps embed will go here in Part 3]</p>
+    <!-- Interactive map (Leaflet + OpenStreetMap), built by script.js -->
+    <section id="map" class="reveal">
+      <h2>Find Us</h2>
+      <div id="map-canvas" role="region" aria-label="Map showing the Cape Town CBD and Observatory branches">
+        <p class="map-fallback">The interactive map could not be loaded. Use the "Open larger map" links above to see each branch.</p>
+      </div>
+      <p class="map-credit">Map data &copy; OpenStreetMap contributors.</p>
     </section>
 
-    <!-- Simple contact form -->
-    <section id="contact-form">
-      <h3>Send Us a Message</h3>
-      <form action="#" method="post" class="site-form">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required>
+    <!-- Contact form: validated by script.js, then compiled into an email you can send -->
+    <section id="contact-form" class="reveal">
+      <h2>Send Us a Message</h2>
+      <p>For custom cake orders, please use our <a href="enquiry.html">enquiry form</a> instead.</p>
+      <form action="#" method="post" class="site-form" id="contact-form-element" novalidate>
 
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required>
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+          <span class="field-error" id="name-error"></span>
+        </div>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+          <span class="field-error" id="email-error"></span>
+        </div>
 
-        <button type="submit">Send Message</button>
+        <div class="field">
+          <label for="phone">Phone Number <span class="optional">(optional)</span></label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="e.g. 021 424 5678" aria-describedby="phone-error">
+          <span class="field-error" id="phone-error"></span>
+        </div>
+
+        <div class="field">
+          <label for="type">Type of Message</label>
+          <select id="type" name="type" required aria-describedby="type-error">
+            <option value="">Choose a type...</option>
+            <option value="General question">General question</option>
+            <option value="Feedback">Feedback</option>
+            <option value="Compliment">Compliment</option>
+            <option value="Complaint">Complaint</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="field-error" id="type-error"></span>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required aria-describedby="message-error message-count"></textarea>
+          <span class="field-hint" id="message-count">0 / 1000</span>
+          <span class="field-error" id="message-error"></span>
+        </div>
+
+        <!-- Honeypot: hidden from people, but spam bots fill it in -->
+        <div class="hp" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit">Prepare Message</button>
       </form>
+
+      <!-- Compiled email preview, filled in by script.js after validation -->
+      <div id="email-preview" class="response" tabindex="-1" aria-live="polite" hidden></div>
     </section>
 
   </main>
 
+  <!-- Footer with contact details and internal links, present on every page -->
   <footer>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="enquiry.html">Enquiry</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
     <p>&copy; 2026 Mia's Bakery. All rights reserved.</p>
     <p>Cape Town, South Africa</p>
   </footer>
-
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>

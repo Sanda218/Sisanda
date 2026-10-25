@@ -3,62 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mia's Bakery| About Us</title>
+  <title>About Us | Mia's Bakery, a Cape Town Neighbourhood Bakery</title>
+  <meta name="description" content="Meet Mia's Bakery: our story, mission and vision, and the baker behind our fresh bread, pastries and celebration cakes in Cape Town.">
+  <meta name="author" content="Mia's Bakery">
+  <meta name="theme-color" content="#3B2A21">
+  <link rel="canonical" href="https://sanda218.github.io/Sisanda/about.html">
+
+  <!-- Open Graph / social sharing (off-page SEO) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mia's Bakery">
+  <meta property="og:title" content="About Us | Mia's Bakery, a Cape Town Neighbourhood Bakery">
+  <meta property="og:description" content="Meet Mia's Bakery: our story, mission and vision, and the baker behind our fresh bread, pastries and celebration cakes in Cape Town.">
+  <meta property="og:url" content="https://sanda218.github.io/Sisanda/about.html">
+  <meta property="og:image" content="https://sanda218.github.io/Sisanda/images/responsive/product-bread-1600.jpg">
+  <meta property="og:image:alt" content="Sliced sourdough bread loaves on a wooden board">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A5%90%3C/text%3E%3C/svg%3E">
+  <!-- Adds a "js" class so CSS can show JavaScript-only features (hamburger menu, accordion) without hiding content for visitors with JavaScript off -->
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- Header and navigation menu, present on every page for consistent site-wide navigation -->
-   <header>
-    <h1>Mia's Bakery</h1>
-    <nav>
+  <header>
+    <a class="brand" href="index.html">Mia's Bakery</a>
+    <!-- Hamburger toggle: only visible on mobile (see CSS); script.js opens and closes the menu -->
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav id="site-nav" aria-label="Main">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="about.html" class="active" aria-current="page">About Us</a></li>
         <li><a href="products.html">Products</a></li>
         <li><a href="enquiry.html">Enquiry</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
-   </header>
-   <!-- Main content area for the About Us page -->
-    <main>
-      
-<!-- History scetion-->
- <section id="history">
-  <h2>Our Story</h2>
-  <p>Mia's Bakery is a neighbourhood bakery established in 2026 in Cape Town, South Africa. It specialises in freshly baked bread, pastries, and custom celebration cakes made from scratch daily using quality ingredients.</p>
- </section>
+  </header>
 
- <!-- Mission and Vision -->
-  <section id="mission-vision">
-    <p>To bake fresh, high-quality bread, pastries, and cakes daily using quality ingredients,while providing warm, friendly customer service that makes every visit feel personal. We aim to be a place where customers feel welcomed and where every order, big or small, is made with genuine care.</p>
+  <!-- Main content area for the About Us page -->
+  <main id="main">
 
-    <h2>Vision</h2>
-    <p>To become a trusted neighbourhood bakery recognised throughout Cape Town for quality, consistency, and community connection — a bakery that grows alongside the community it serves, known not only for great bread and cakes, but for the relationships built with every customer who walks through the door.</p>
-  </section>
+    <h1>About Mia's Bakery</h1>
 
-  <!-- Team member -->
-   <section id="team">
-    <h2>Meet the Team</h2>
-    <div class="team-member">
-      <img src="images/responsive/team-portrait-900.jpg"
-        srcset="images/responsive/team-portrait-480.jpg 480w, images/responsive/team-portrait-900.jpg 900w, images/responsive/team-portrait-1600.jpg 1600w"
-        sizes="(max-width: 600px) 90vw, 300px"
-        alt="Baker kneading dough in an apron">
-      <h3>Mia Jacobs</h3>
-      <p>Founder &amp; Head Baker</p>
-    </div>
-   </section>
+    <!-- History section -->
+    <section id="history" class="reveal">
+      <h2>Our Story</h2>
+      <p>Mia's Bakery is a neighbourhood bakery established in 2026 in Cape Town, South Africa. It specialises in freshly baked bread, pastries, and custom celebration cakes made from scratch daily using quality ingredients. Have a look at <a href="products.html">what we bake</a>.</p>
+    </section>
 
-    </main>
-    <!-- Footer with contact details, present on every page -->
-     <footer>
-      <p>&copy; 2026 Mia's Bakery. All rights reserved.</p>
-      <p>Cape Town, South Africa</p>
-     </footer>
+    <!-- Mission and Vision -->
+    <section id="mission-vision" class="reveal">
+      <h2>Our Mission</h2>
+      <p>To bake fresh, high-quality bread, pastries, and cakes daily using quality ingredients, while providing warm, friendly customer service that makes every visit feel personal. We aim to be a place where customers feel welcomed and where every order, big or small, is made with genuine care.</p>
+
+      <h2>Our Vision</h2>
+      <p>To become a trusted neighbourhood bakery recognised throughout Cape Town for quality, consistency, and community connection &mdash; a bakery that grows alongside the community it serves, known not only for great bread and cakes, but for the relationships built with every customer who walks through the door.</p>
+    </section>
+
+    <!-- Team member -->
+    <section id="team" class="reveal">
+      <h2>Meet the Team</h2>
+      <div class="team-member">
+        <img src="images/responsive/team-portrait-900.jpg"
+          srcset="images/responsive/team-portrait-480.jpg 480w, images/responsive/team-portrait-900.jpg 900w, images/responsive/team-portrait-1600.jpg 1600w"
+          sizes="(max-width: 600px) 90vw, 300px"
+          width="900" height="1350" loading="lazy" decoding="async"
+          alt="Mia Jacobs, founder and head baker, kneading dough in an apron">
+        <div>
+          <h3>Mia Jacobs</h3>
+          <p>Founder &amp; Head Baker</p>
+        </div>
+      </div>
+      <p>Want to talk cakes? <a href="contact.html">Get in touch</a> or <a href="enquiry.html">send us an enquiry</a>.</p>
+    </section>
+
+  </main>
+
+  <!-- Footer with contact details and internal links, present on every page -->
+  <footer>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="enquiry.html">Enquiry</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <p>&copy; 2026 Mia's Bakery. All rights reserved.</p>
+    <p>Cape Town, South Africa</p>
+  </footer>
+  <script src="js/script.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,6 @@
+# robots.txt for Mia's Bakery
+# Tells search engine crawlers they may index every page, and where the sitemap is.
+User-agent: *
+Allow: /
+
+Sitemap: https://sanda218.github.io/Sisanda/sitemap.xml
