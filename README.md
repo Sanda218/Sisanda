@@ -125,22 +125,18 @@ Part 3 adds JavaScript interactivity, search engine optimisation (SEO), validate
 
 ## Deployment
 The website is deployed on **GitHub Pages** from the `master` branch (root folder): https://sanda218.github.io/Sisanda/
-```
-## Features in Action
-| Hamburger menu (mobile) | Search and filter | Lightbox gallery |
-|---|---|---|
-| ![Hamburger menu open on mobile](docs/p3-hamburger-menu.png) | ![Searching the products page](docs/p3-product-search.png) | ![Gallery lightbox open](docs/p3-lightbox.png) |
 
-| FAQ accordion | Form validation | Estimate and availability |
-|---|---|---|
-| ![FAQ accordion with one answer open](docs/p3-faq.png) | ![Enquiry form showing validation errors](docs/p3-validation.png) | ![Enquiry response with cost estimate](docs/p3-estimate.png) |
+### Part 3 Features in Action
+| Hamburger menu (mobile) | Search and filter | Lightbox gallery | FAQ accordion |
+| ![Hamburger menu open on mobile](docs/hamburger-menu.png) | ![Searching the products page](docs/product-search.png) | ![Gallery lightbox open](docs/lightbox-gallery.png) | ![FAQ accordion with one answer open](docs/faq-accordion.png) |
 
-| Interactive map | Contact email ready to send |
-|---|---|
-| ![Map with both branch markers](docs/p3-map.png) | ![Compiled contact email preview](docs/p3-contact-email.png) |
+| Estimate and availability | Interactive map | Contact email ready to send |
+
+| ![Enquiry response with cost estimate](docs/enquiry-estimate.png) | ![Map with both branch markers](docs/store-map.png) | ![Compiled contact email preview](docs/contact-email.png) |
+
 
 ## Sitemap
-![Mia's Bakery sitemap](docs/Mia's bakery sitemap.png)
+![Mia's Bakery sitemap](docs/sitemap.png)
 
 Shared across all five pages:
 Home
@@ -150,7 +146,7 @@ Home
 └── Contact Us
 
 ## Wireframe
-![Mia's Bakery wireframe](docs/Mia's bakery wireframe.png)
+![Mia's Bakery wireframe](docs/wireframe.png)
 
 ## Responsive Design Testing
 Screenshots were captured using Chrome DevTools' device toolbar at three widths: Desktop (1440px), Tablet (768px), and Mobile (375px).
@@ -225,5 +221,5 @@ Screenshots were captured using Chrome DevTools' device toolbar at three widths:
 - Agafonkin, V., n.d. *Leaflet: an open-source JavaScript library for interactive maps*. Available at: https://leafletjs.com/ [Accessed: 25/10/26].
 - OpenStreetMap contributors, n.d. *OpenStreetMap*. Available at: https://www.openstreetmap.org/copyright [Accessed: 25/10/26].
 - Formspree, n.d. *Formspree: form backend for static websites*. Available at: https://formspree.io/ [Accessed: 25/10/26].
-- Schema.org, n.d. *Bakery*. Available at: https://schema.org/Bakery [Accessed: 25s/10/26].
+- Schema.org, n.d. *Bakery*. Available at: https://schema.org/Bakery [Accessed: 25/10/26].
 - Sitemaps.org, n.d. *Sitemaps XML format*. Available at: https://www.sitemaps.org/protocol.html [Accessed: 25/10/26].
