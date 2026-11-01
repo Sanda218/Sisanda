@@ -64,7 +64,80 @@ Part 2 focuses on the visual design and responsiveness of the website, and on co
 - Generated three resolutions (480px / 900px / 1600px wide) of every photograph and implemented `srcset` and `sizes` attributes so browsers download an appropriately sized image instead of the original 4000px+ originals.
 
 ## Part 3 Details
-*To be completed — JavaScript functionality and SEO optimisation.*
+Part 3 adds JavaScript interactivity, search engine optimisation (SEO), validated forms and deployment, and applies the feedback from Part 2.
+
+**Live website:** https://github.com/Sanda218/Sisanda/tree/master *(replace with your real link once deployed)*
+
+**Feedback from Part 2 that was applied:**
+- Added a hamburger toggle for mobile navigation (visible at 600px and below, keyboard accessible, closes with Escape or when a link is chosen).
+- Added a large-desktop breakpoint (1400px and wider) with a wider content column, larger text and a header aligned to the content.
+- Added "Our Mission" and "Our Vision" headings on the About page so each paragraph sits under its own heading.
+- Replaced the en dash in "Mon–Sat" (and "7am–5pm") on the Contact page with a hyphen for consistency.
+
+**JavaScript features (`js/script.js`):**
+| Feature | Page | What it does |
+|---|---|---|
+| Hamburger menu | All pages | Opens and closes the mobile navigation and updates `aria-expanded` for screen readers |
+| Dynamic product listings | Products | Builds the product cards from a JavaScript array instead of fixed HTML |
+| Search, filter and sort | Products | Live text search, category filter and sort by price or name, with a result count |
+| Gallery with lightbox | Home | Thumbnails open a larger image in a native `<dialog>`, with next/previous, keyboard arrows and Escape to close |
+| FAQ accordion | Enquiry | One question open at a time, with arrow-key navigation |
+| Interactive map | Contact | Leaflet map with a marker for each branch and "Show on map" buttons |
+| Scroll animations | All pages | Sections fade in as they scroll into view (disabled for visitors who prefer reduced motion) |
+| Enquiry form | Enquiry | Validates input, then shows an estimated cost and availability for the chosen product and date |
+| Contact form | Contact | Validates input and compiles the message into an email addressed to info@miasbakery.co.za |
+
+**Form validation and security:**
+- Client-side checks for name, email, South African phone numbers, quantity, dates (no past dates, no Sundays, notice periods) and message length, with an inline error message under each field.
+- The enquiry form submits with AJAX (`fetch`) so the page does not reload. Replace the placeholder in `CONFIG.formEndpoint` with a Formspree form ID to send enquiries for real; until then the form runs in demo mode.
+## SEO Strategy
+
+**On-page SEO**
+| Page | Main keywords | Where they are used |
+|---|---|---|
+| Home | bakery Cape Town, fresh bread, custom celebration cakes | Page title, meta description, hero heading and paragraph |
+| About Us | neighbourhood bakery Cape Town, our story | Page title, meta description, headings |
+| Products | sourdough bread, croissants and pastries, celebration cakes, wedding cake | Page title, meta description, product names and descriptions |
+| Enquiry | custom cake order Cape Town, order a birthday cake | Page title, meta description, heading, FAQ |
+| Contact Us | bakery Cape Town CBD, bakery Observatory, bakery opening hours | Page title, meta description, branch headings, structured data |
+
+*Keywords were chosen by considering what a local customer would type into a search engine when looking for a bakery in Cape Town.*
+
+- **Title tags and meta descriptions:** every page has its own title (under 65 characters) and meta description (under 160 characters).
+- **Header tags:** each page has exactly one `<h1>`, followed by `<h2>` and `<h3>` headings in order. The site name in the header is a link, not a heading.
+- **Image optimisation:** descriptive file names (e.g. `product-bread-900.jpg`), meaningful alt text, `width` and `height` attributes, lazy loading below the fold and resized versions served with `srcset`.
+- **URL structure:** short, readable page names (`products.html`, `enquiry.html`, `contact.html`).
+- **Internal linking:** pages link to each other from the body text, the home page category links open the Products page pre-filtered, and every page has a footer navigation.
+- **Mobile-friendliness:** responsive layout with a hamburger menu, tested at 375px, 768px, 1440px and 1920px.
+- **Structured data:** JSON-LD `Bakery` markup on the home page lists both branches, addresses, phone numbers and trading hours (local SEO).
+- **Canonical links and social tags:** each page declares its canonical URL and Open Graph tags for sharing.
+
+**Off-page SEO (recommended actions)**
+- *Backlinks:* ask local directories and Cape Town food blogs to link to the website.
+- *Social media:* share the products and the website link on the bakery's social media pages (Open Graph tags give link previews an image and description).
+- *Local SEO:* claim a Google Business Profile for each branch using the same name, address, phone number and hours shown on the Contact page.
+
+**Additional**
+- `robots.txt` allows all crawlers and points to the sitemap.
+- `sitemap.xml` lists all five pages.
+- *Page speed:* resized responsive images, lazy loading, `fetchpriority` on the hero image, font `display=swap`, and no large JavaScript libraries (Leaflet loads on the Contact page only).
+- *Security:* the site is served over HTTPS by the host, external links use `rel="noopener noreferrer"`, and forms use a honeypot and text-only output.
+
+## Deployment
+The website is deployed on **GitHub Pages** from the `master` branch (root folder): https://sanda218.github.io/Sisanda/
+```
+## Features in Action
+| Hamburger menu (mobile) | Search and filter | Lightbox gallery |
+|---|---|---|
+| ![Hamburger menu open on mobile](docs/p3-hamburger-menu.png) | ![Searching the products page](docs/p3-product-search.png) | ![Gallery lightbox open](docs/p3-lightbox.png) |
+
+| FAQ accordion | Form validation | Estimate and availability |
+|---|---|---|
+| ![FAQ accordion with one answer open](docs/p3-faq.png) | ![Enquiry form showing validation errors](docs/p3-validation.png) | ![Enquiry response with cost estimate](docs/p3-estimate.png) |
+
+| Interactive map | Contact email ready to send |
+|---|---|
+| ![Map with both branch markers](docs/p3-map.png) | ![Compiled contact email preview](docs/p3-contact-email.png) |
 
 ## Sitemap
 ![Mia's Bakery sitemap](docs/Mia's bakery sitemap.png)
@@ -122,10 +195,26 @@ Screenshots were captured using Chrome DevTools' device toolbar at three widths:
 | [16/09/26] | Captured responsive design screenshots (Home, Products, Enquiry and Contact Us) at desktop (1440px), tablet (768px), and mobile (365px) widths using Chrome DevTools, and added them to the docs folder and README
 | [16/09/26] | Resolved a merge conflict between local and remote repository history.
 | [16/09/26] | Fixed duplicate '.png.png' file extensions on all responsive design screenshot files in the docs folder.
+| [24/10/26] | Part 2 feedback: added a hamburger toggle for mobile navigation (button, JavaScript menu toggle with `aria-expanded`, closes on Escape or link click, animated bars) and hid the link list behind it at 600px and below |
+| [24/10/26] | Part 2 feedback: added a large-desktop breakpoint at 1400px (wider content column, larger base text, header aligned with content, larger hero and map) |
+| [25/10/26] | Part 2 feedback: added "Our Mission" and "Our Vision" headings to the About page so the two paragraphs are no longer headingless, and fixed a missing space in "ingredients, while" |
+| [25/10/26] | Part 2 feedback: replaced en dashes with hyphens in "Mon-Sat" and "7am-5pm" on the Contact page |
+| [25/10/26] | Restructured headings so every page has one `<h1>` (page title), moved the site name in the header to a link, and made product and branch titles `<h2>` for correct heading order |
+| [25/10/26] | Added a "Skip to main content" link and visible keyboard focus styles for accessibility |
+| [25/10/26] | Built the product list from a JavaScript array and added live search, category filter and price/name sorting on the Products page; category links on the home page now open the Products page pre-filtered |
+| [25/10/26] | Added the enquiry form validation (name, email, phone, quantity, date, message), an estimated cost and availability response, an "Enquire" button on each product that pre-selects it, and AJAX submission with `fetch` |
+| [25/10/26] | Added the contact form validation and a message-type field; the validated message is compiled into an email to info@miasbakery.co.za that the visitor can open in their email app or copy |
+| [25/10/26] | Added a honeypot field and text-only output to both forms to reduce spam and prevent script injection |
+| [25/10/26] | Replaced the map placeholder with an interactive Leaflet/OpenStreetMap map with a marker for each branch and "Show on map" buttons |
+| [25/10/26] | Added a gallery with a lightbox (native `<dialog>`) to the home page and an accordion FAQ to the Enquiry page |
+| [25/10/26] | Added CSS animations and transitions (hero fade-in, scroll reveal, gallery zoom, accordion, lightbox) with a `prefers-reduced-motion` fallback |
+| [25/10/26] | Capped the hero image height and cropped the photo to fit, so the home page content is no longer pushed far below the screen |
+| [25/10/26] | SEO: wrote unique page titles and meta descriptions, canonical links, Open Graph tags, descriptive alt text, image width/height, lazy loading and JSON-LD local business data |
+| [25/10/26] | SEO: created `robots.txt` and `sitemap.xml` |
+| [25/10/26] | Deployed the website to GitHub Pages (add this row once you have actually deployed it) |
+
 
 ## References
-*(Compile all references used across the Website Project Proposal and Part 1 research here, in Harvard style — IIE adapted)*
-
 - Bynamnamnam, n.d. *Bakery pastries display photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/29445730 [Accessed: [04/08/26]].
 - Eat Kubba, n.d. *Sliced sourdough bread photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/11842163 [Accessed: [04/08/26]].
 - Fatih Guney, n.d. *Bakery display case photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/17869890 [Accessed: [04/08/26]].
@@ -133,3 +222,8 @@ Screenshots were captured using Chrome DevTools' device toolbar at three widths:
 - Patricio Ledeill, n.d. *Celebration cake photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/19036040 [Accessed: [04/08/26]].
 - Google Fonts, n.d. *Fraunces* [typeface]. Available at: https://fonts.google.com/specimen/Fraunces [Accessed: 28/08/26].
 - Google Fonts, n.d. *Inter* [typeface]. Available at: https://fonts.google.com/specimen/Inter [Accessed: 28/08/26].
+- Agafonkin, V., n.d. *Leaflet: an open-source JavaScript library for interactive maps*. Available at: https://leafletjs.com/ [Accessed: 25/10/26].
+- OpenStreetMap contributors, n.d. *OpenStreetMap*. Available at: https://www.openstreetmap.org/copyright [Accessed: 25/10/26].
+- Formspree, n.d. *Formspree: form backend for static websites*. Available at: https://formspree.io/ [Accessed: 25/10/26].
+- Schema.org, n.d. *Bakery*. Available at: https://schema.org/Bakery [Accessed: 25s/10/26].
+- Sitemaps.org, n.d. *Sitemaps XML format*. Available at: https://www.sitemaps.org/protocol.html [Accessed: 25/10/26].
