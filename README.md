@@ -66,7 +66,7 @@ Part 2 focuses on the visual design and responsiveness of the website, and on co
 ## Part 3 Details
 Part 3 adds JavaScript interactivity, search engine optimisation (SEO), validated forms and deployment, and applies the feedback from Part 2.
 
-**Live website:** https://github.com/Sanda218/Sisanda/tree/master *(replace with your real link once deployed)*
+**Live website:** https://sanda218.github.io/Sisanda/ 
 
 **Feedback from Part 2 that was applied:**
 - Added a hamburger toggle for mobile navigation (visible at 600px and below, keyboard accessible, closes with Escape or when a link is chosen).
@@ -124,7 +124,7 @@ Part 3 adds JavaScript interactivity, search engine optimisation (SEO), validate
 - *Security:* the site is served over HTTPS by the host, external links use `rel="noopener noreferrer"`, and forms use a honeypot and text-only output.
 
 ## Deployment
-The website is deployed on **GitHub Pages** from the `master` branch (root folder): https://sanda218.github.io/Sisanda/
+The website is deployed on **GitHub Pages** from the `master` branch (root folder):https://sanda218.github.io/Sisanda/
 
 ### Part 3 Features in Action
 | Hamburger menu (mobile) | Search and filter | Lightbox gallery | FAQ accordion |
@@ -208,7 +208,7 @@ Screenshots were captured using Chrome DevTools' device toolbar at three widths:
 | [25/10/26] | SEO: wrote unique page titles and meta descriptions, canonical links, Open Graph tags, descriptive alt text, image width/height, lazy loading and JSON-LD local business data |
 | [25/10/26] | SEO: created `robots.txt` and `sitemap.xml` |
 | [25/10/26] | Deployed the website to GitHub Pages (add this row once you have actually deployed it) |
-
+| [02/11/26] | Deployed the website to GitHub Pages from the master branch and added the live link to the README |
 
 ## References
 - Bynamnamnam, n.d. *Bakery pastries display photograph*. [Photograph]. Pexels. Available at: https://www.pexels.com/photo/29445730 [Accessed: [04/08/26]].
